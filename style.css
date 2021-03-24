@@ -1,5 +1,20 @@
+@font-face {
+    src: url(fonts/FreePixel.ttf);
+    font-family: pix;
+}
+
+@font-face {
+    src: url(fonts/SpaceMono-Bold.ttf);
+    font-family: mono;
+}
+
+@font-face {
+    src: url(fonts/Inconsolata-Medium.ttf);
+    font-family: inconsolata;
+}
+
 body{
-    background-image:url(img/double-bubble-dark.png);
+    background-image:url(img/memphis-mini-dark.png);
     background-attachment:fixed;
 }
 
@@ -10,6 +25,7 @@ html {
 * {
     padding:0%;
     margin: 0%;
+    font-family: pix;
 }
 
 /* width */
@@ -35,13 +51,13 @@ html {
 /**start of top bar**/
 
 .wrapper {
-    margin-right: auto;
+    margin-left: auto;
     margin-right: auto;
     max-width: 1200;
 }
 
 .topbar {
-    background-image: url(img/webstie\ background.jpg);
+    background-image: url(img/abstract3.png);
     background-attachment: fixed;
     opacity: 100%;
     background-position: center;
@@ -63,7 +79,7 @@ li {
 
 .btn {
     text-decoration: none;
-    font-family: monospace;
+    font-family: pix;
     background-color: white;
     font-size: 20px;
     padding: 10px 20px;
@@ -108,7 +124,7 @@ li {
 .welcome {
     font-size: 50px;
     text-align: center;
-    font-family: monospace;
+    font-family: pix;
     color: rgba(255, 255, 255, 0.863);
     position: relative;
     top: 20px;
@@ -122,6 +138,7 @@ li {
     border-radius: 6px;
     position: relative;
     top: 40px;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
 }
 
 .p2 {
@@ -139,7 +156,7 @@ li {
 .paragraph1 {
     text-align: center;
     font-size: 30px;
-    font-family: monospace;
+    font-family: inconsolata;
     color: white;
     font-weight: bold;
     padding-top: 20px;
@@ -178,7 +195,7 @@ li {
 
 .rocketleauge {
     text-align: left;
-    font-family: monospace;
+    font-family: pix;
     color: rgba(255, 255, 255, 0.705);
     position: relative;
     left: 20px;
@@ -189,7 +206,7 @@ li {
 
 .rouge {
     text-align: left;
-    font-family: monospace;
+    font-family: pix;
     color: rgba(255, 255, 255, 0.705);
     position: relative;
     left: 20px;
@@ -200,7 +217,7 @@ li {
 
 .unreal {
     text-align: left;
-    font-family: monospace;
+    font-family: pix;
     color: rgba(255, 255, 255, 0.705);
     position: relative;
     left: 20px;
@@ -284,7 +301,7 @@ li {
 
 .vltexts {
     position: relative;
-    font-family: monospace;
+    font-family: pix;
     font-size: 15px;
     text-align: left;
     left: 20px;
@@ -296,13 +313,10 @@ li {
 .endweb {
     width: 100%;
     height: 130px;
-    background-image: url(img/abstract3.png);
     background-position: center;
     background-size: 100%;
-    background-attachment: fixed;
     margin: auto;
     position: relative;
-    top: 100px;
     opacity: 50%;
     transition: .2s ease-in-out;
 }
@@ -388,7 +402,7 @@ li {
 
 .alphabetical-orders {
     position: fixed;
-    font-family: monospace;
+    font-family: pix;
     font-weight: bold;
     color: white;
 }
@@ -410,4 +424,10 @@ li {
 .indicators:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
+}
+
+.prgwrapr {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1330;
 }
