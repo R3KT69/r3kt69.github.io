@@ -134,7 +134,7 @@ li {
     margin: auto;
     background-color: rgba(0, 0, 0, 0.383);
     width: 1200px;
-    height: 850px;
+    height: 1070px;
     border-radius: 6px;
     position: relative;
     top: 40px;
@@ -226,6 +226,17 @@ li {
     font-weight: bold;
 }
 
+.warframe {
+    text-align: left;
+    font-family: pix;
+    color: rgba(255, 255, 255, 0.705);
+    position: relative;
+    left: 20px;
+    bottom: 120px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
 /**img itself**/
 
 .contentimgru {
@@ -258,6 +269,16 @@ li {
     transition: 0.4s ease-in-out;
 }
 
+.contentimgwf {
+    width: 300px;
+    height: 170px;
+    position: relative;
+    left: 550px;
+    bottom: 245px;
+    border-radius: 10px;
+    transition: 0.4s ease-in-out;
+}
+
 /**hr between the texts**/
 
 .ff {
@@ -271,6 +292,13 @@ li {
     width: 500px;
     margin: auto;
     bottom: 65px;
+    position: relative;
+}
+
+.ff3 {
+    width: 500px;
+    margin: auto;
+    bottom: 170px;
     position: relative;
 }
 
@@ -288,6 +316,10 @@ li {
     filter: brightness(60%);
 }
 
+.contentimgwf:hover {
+    filter: brightness(60%);
+}
+
 /**vertical line on side**/
 
 .verL {
@@ -296,7 +328,7 @@ li {
     width: 3px;
     position: relative;
     left: 900px;
-    bottom:900px;
+    bottom:1150px;
 }
 
 .vltexts {
@@ -310,20 +342,6 @@ li {
     letter-spacing: 0px;
 }
 
-.endweb {
-    width: 100%;
-    height: 130px;
-    background-position: center;
-    background-size: 100%;
-    margin: auto;
-    position: relative;
-    opacity: 50%;
-    transition: .2s ease-in-out;
-}
-
-.endweb:hover {
-    opacity: 100%;
-}
 
 .logos {
     position: relative;
@@ -375,59 +393,21 @@ li {
     padding-left: 20px;
 }
 
-.pt {
-    font-family: monospace;
-    color: white;
-    position: relative;
-    left: 20px;
-    top: 20px;
-    text-align: left;
-    font-size: 15px;
-}
-
-.ptcss {
-    font-family: monospace;
-    color: white;
-    position: relative;
-    padding-top: 0px;
-    font-size: 30px;
-    top: 15px;
-    left: 20px;
-    bottom: 20px;
-    text-align: left;
-    padding-bottom: 10px;
-    text-decoration: underline;
-    
-}
-
-.alphabetical-orders {
-    position: fixed;
-    font-family: pix;
-    font-weight: bold;
-    color: white;
-}
-
-.indicators {
-    color: white;
-    display: list-item;
-    text-decoration: none;
-    font-size: 15px;
-    background-color: black;
-    position: relative;
-    top: 20px;
-    left: 20px;
-    padding: 5px 5px;
-    border-radius: 5px;
-    transition: .2s ease-in-out;
-}
-
-.indicators:hover {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-}
-
-.prgwrapr {
+.wrapper2ndpage {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1330;
+    max-width: 1200;
+}
+
+.vbs {
+    text-align: center;
+    position: relative;
+    top: 20px;
+    font-family: inconsolata;
+}
+
+.pvbs {
+    font-size: 15px;
+    position: relative;
+    top: 30px;
 }
