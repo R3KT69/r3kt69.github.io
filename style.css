@@ -57,8 +57,7 @@ html {
 }
 
 .topbar {
-    background-image: url(img/abstract3.png);
-    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.815);
     opacity: 100%;
     background-position: center;
     height: 100px;
