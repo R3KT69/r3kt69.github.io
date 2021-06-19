@@ -1,0 +1,151 @@
+* {
+    padding:0%;
+    margin: 0%;
+}
+
+@font-face {
+    src: url(fonts/Inconsolata-Medium.ttf);
+    font-family: Inco;
+}
+
+@font-face {
+    src: url(fonts/SpaceMono-Bold.ttf);
+    font-family: smb;
+}
+
+@font-face {
+    font-family: pix;
+    src: url(fonts/FreePixel.ttf);
+}
+
+body {
+    background-image: url(img/obama.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #000000dc;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(82, 82, 82);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(185, 185, 185);
+  }
+
+.toptext {
+    font-family: smb;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 100px;
+    border-bottom: 2px solid white;
+    padding-bottom: 0.5rem;
+}
+
+header {
+    width: fit-content;
+    margin: auto;
+}
+
+.contents {
+   height: 700px;
+   width: 1200px;
+   transform: translate(30px, 380px);
+   transition: 1s;
+   -webkit-backdrop-filter: blur(10px);
+   backdrop-filter: blur(10px);
+   border-radius: 10px;
+   border: solid white;
+   filter: drop-shadow(8px 8px 10px rgb(0, 0, 0));
+   margin: auto;
+   position: relative;
+   white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.endbar {
+    width: auto;
+    height: 80px;
+    position: relative;
+    top: 400px;
+    background-color: rgba(0, 0, 0, 0.342);
+}
+
+.topline {
+    font-family: Inco;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+    position: relative;
+    left: 20px;
+    top: 20px;
+    padding-bottom: 0.5rem;
+    display: table-cell;
+}
+
+.txt {
+    font-family: Inco;
+    color: white;
+    font-size: 25px;
+    position: relative;
+    font-weight: bold;
+    top: 10px;
+    left: 20px;
+    transition: 1s;
+}
+
+
+
+.txt:hover {
+    transform: scale(1.05) translateX(5%) translateY(5%);
+}
+
+
+
+.endbartxt {
+    text-align: center;
+    font-family: pix;
+    font-size: 20px;
+    color: white;
+    position: relative;
+    top: 30px;
+    transition: 1s;
+    filter: blur(3px);
+}
+
+.endbartxt:hover {
+    filter: blur(0px);
+}
+
+
+  @media only screen and (max-width:1190px) {
+    header, footer, .contents {
+      width: 100%;
+
+    }
+  }
+
+  @media only screen and (max-width:932px) {
+    .contents {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        position: relative;
+        left: -30px;
+    }
+  }
