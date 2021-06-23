@@ -1,0 +1,166 @@
+* {
+    padding:0%;
+    margin: 0%;
+}
+
+@font-face {
+    src: url(fonts/Inconsolata-Medium.ttf);
+    font-family: Inco;
+}
+
+@font-face {
+    src: url(fonts/SpaceMono-Bold.ttf);
+    font-family: smb;
+}
+
+@font-face {
+    font-family: pix;
+    src: url(fonts/FreePixel.ttf);
+}
+
+@font-face {
+  font-family: opensans;
+  src: url(fonts/OpenSans-SemiBold.ttf);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #000000dc;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(82, 82, 82);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(185, 185, 185);
+  }
+
+body {
+    background: linear-gradient(to bottom right, #c300ff, #0051ff);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 1400px;
+}
+
+.surveybody {
+    margin: auto;
+    transition: 1s;
+    box-shadow: 0px 4px 4x 0px rgb(0, 0, 0);
+    background-color: rgb(43, 0, 161);
+    height: 1170px;
+    width: 850px;
+    transform: translateY(70px);
+    border-radius: 15px;
+    border: solid 2px rgb(255, 255, 255);
+}
+
+
+
+header {
+  width: fit-content;
+  margin: auto;
+}
+
+.texth1 {
+  font-family: opensans;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 30px;
+  border-bottom: 2px solid white;
+  padding-bottom: 0.5rem;
+  display: block;
+}
+
+.texth2 {
+  font-family: opensans;
+  font-style: italic;
+  font-size: 20px;
+  color: white;
+  position: relative;
+  top: 25px;
+}
+
+
+.formgroup {
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  position: relative;
+  left: 50px;
+  top: 45px;
+  font-family: inco;
+  color: white;
+}
+
+.formgroup label {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+#submit {
+  position: relative;
+  top: 20px;
+  left: 50px;
+}
+
+#name,
+#email,
+#age,
+#dropdownmenu,
+#favoriteselector,
+#comments,
+#submit {
+  width: 50%;
+  padding: .6rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  border: none;
+}
+
+#surveyform .formgroup:nth-child(5) label {
+  display: inline;
+}
+
+.formgroup textarea {
+  height: 7rem;
+}
+
+#submit {
+  background: #37AF65;
+  color: #fff;
+  padding: .7rem;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+.referral {
+  display: inline-block;
+  margin-right: .5rem;
+  min-width: 1.2rem;
+  min-height: 1.2rem;
+}
+
+@media only screen and (max-width:950px) {
+  header, footer, h1, h2 {
+    width: 100%;
+
+  }
+}
+
+@media only screen and (max-width:932px) {
+  .surveybody, .container {
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      position: relative;
+  }
+}
