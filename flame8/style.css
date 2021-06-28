@@ -200,8 +200,10 @@ header.sticky ul li a {
 
 #dimepick {
     height: fit-content;
-    width: fit-content;
-    margin: auto;
+    width: 100%;
+    position: relative;
+    display: flex;
+  justify-content: center;
     transform: translateY(300px);
 }
 
