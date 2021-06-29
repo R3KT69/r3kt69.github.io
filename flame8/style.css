@@ -64,6 +64,7 @@ header {
     padding: 40px 100px;
     z-index: 100000;
     background-color: rgba(0, 0, 0, 0.185);
+    border-bottom: rgba(197, 197, 197, 0.582) solid 3px;
 }
 
 header.sticky {
@@ -127,7 +128,7 @@ header.sticky ul li a {
     height: 900px;
     font-family: poppins;
     padding-top: 20px;
-    background: url(img/wp7930319.png);
+    background: url(img/castleinvert.png);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -203,7 +204,7 @@ header.sticky ul li a {
     width: 100%;
     position: relative;
     display: flex;
-  justify-content: center;
+    justify-content: center;
     transform: translateY(300px);
 }
 
@@ -276,7 +277,7 @@ header.sticky ul li a {
     height: 300px;
     width: auto;
     margin: auto;
-    background-image: url(img/endbar.PNG);
+    background-image: url(img/castle.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -315,6 +316,11 @@ header.sticky ul li a {
     padding-top: 20px;
     padding-bottom: 20px;
     border-radius: 10px;
+    transition: 0.5s;
+}
+
+.srvlnk:hover {
+    transform: scale(1.1);
 }
 
 .dislinkb {
