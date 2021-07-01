@@ -37,19 +37,22 @@
     background: rgb(185, 185, 185);
   }
 
+  html,body
+  {
+      width: 100%;
+      overflow-x: hidden;  
+      scroll-behavior: smooth;
+  }
+
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-  }
 
 body {
     background: #000;
-    overflow-x: hidden;
 }
 
 header {
@@ -373,29 +376,44 @@ header.sticky ul li a {
 }
 
 
-  @media only screen and (max-width:660px) {
-    li {
-      display: none;
+  @media only screen and (max-width:1074px) {
+    .staffroster {
+      width: 80%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
     }
   }
 
-  @media only screen and (max-width:660px) {
-    .logo {
-      float: left;
-    }
-  }
 
-  @media only screen and (max-width:660px) {
+  @media only screen and (max-width:1074px) {
     #welcome {
+      width: 100%;
+      padding-right: 50px;
+      padding-left: 50px;
+    }
+  }
+
+  @media only screen and (max-width:578px) {
+    .dislnk, .gitlnk, .srvlnk {
+      width: 70%;
+      margin: auto;
+    }
+  }
+
+  @media only screen and (max-width:375px) {
+    .dislnk, .gitlnk, .srvlnk {
+      width: 60%;
+      margin: auto;
+      position: relative;
+      right: 70px;
+    }
+  }
+
+  @media only screen and (max-width:1074px) {
+    .distxt {
       width: 100%;
     }
   }
 
-  @media only screen and (max-width:660px) {
-    .staffroster {
-        overflow-x: auto;
-        overflow-y: hidden;
-        white-space: nowrap;
-        position: relative;;
-    }
-  }
+
