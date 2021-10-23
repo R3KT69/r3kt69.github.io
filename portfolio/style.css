@@ -1,0 +1,114 @@
+* {
+    padding:0%;
+    margin: 0%;
+}
+
+@font-face {
+    src: url(fonts/Monospaced/ModernDOS8x16.ttf);
+    font-family: Dos1;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #000000dc;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(82, 82, 82);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(185, 185, 185);
+  }
+
+body {
+    background: url(images/backgroundWin.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+#myConsole {
+    background-color: rgb(5, 5, 5);
+    border: solid 3px rgb(192, 192, 192);
+    color: white;
+    height:  auto;
+    width: 1024px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 4px 4px #0000008c;
+
+}
+
+#topBar {
+    background-color: rgb(0, 0, 110);
+    height: 30px;
+    border-bottom: solid 3px rgb(192, 192, 192);
+    width: auto;
+}
+
+#cmdtext {
+    font-family: Dos1;
+    position: relative;
+    text-align: center;
+    bottom: 18px;
+}
+
+.icons {
+    position: relative;
+    left: 88.5%;
+    top: 4px;
+}
+
+#consoleIco {
+    position: relative;
+    top: 4px;
+    left: 4px;
+}
+
+.links {
+    color: rgb(0, 100, 30);
+}
+
+.commandTexts {
+    font-family: Dos1;
+    padding: 1%;
+}
+
+#red {
+    color: rgb(168, 0, 0);
+}
+
+
+@media only screen and (max-width:1074px) {
+    #myConsole {
+        width: 90%;
+    }
+    .icons {
+        left: 70%;
+    }
+  }
+
+@media only screen and (max-width:410px) {
+    #decorate {
+        display: none;
+    }
+  }
+
+  @media only screen and (max-width:375px) {
+    #myConsole {
+        width: 90%;
+        right: 10px;
+    }
+    .icons {
+        left: 65%;
+    }
+  }
