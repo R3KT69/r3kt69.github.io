@@ -103,8 +103,8 @@ body {
     }
   }
 
-  @media only screen and (max-height:778px) {
-    #myConsole {
-        overflow-y: visible;
+  @media only screen and (max-height:768px) {
+    * {
+        font-size: 12px;
     }
   }
