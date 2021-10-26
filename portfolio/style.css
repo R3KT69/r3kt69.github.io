@@ -104,12 +104,6 @@ body {
   }
 
   @media only screen and (max-height:768px) {
-    * {
-        font-size: 12px;
-    }
-  }
-
-  @media only screen and (max-height:768px) {
     .commandTexts {
         font-size: 10px;
     }
