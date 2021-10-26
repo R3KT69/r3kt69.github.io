@@ -108,3 +108,27 @@ body {
         font-size: 12px;
     }
   }
+
+  @media only screen and (max-height:768px) {
+    .commandTexts {
+        font-size: 10px;
+    }
+    #cmdtext {
+        font-size: 10px;
+    }
+    #myConsole {
+        width: 50%;
+    }
+    #topBar {
+        height: 22px;
+    }
+    .icons {
+        transform: scale(0.8);
+    }
+    #consoleIco {
+        top: 0;
+        bottom: 0;
+        padding: 0;
+        transform: scale(0.8);
+    }
+  }
