@@ -28,7 +28,7 @@
   }
 
 body {
-    background: url(images/windows98.png);
+    background-color: rgb(1,130,129);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -83,6 +83,23 @@ body {
 
 #red {
     color: rgb(168, 0, 0);
+}
+
+#tier {
+    font-style: italic;
+    color: rgb(134, 134, 134);
+}
+
+#tierNovice {
+    color: rgb(129, 103, 63);
+}
+
+#tierIntermediate {
+    color: rgb(0, 60, 128);
+}
+
+#tierAdvanced {
+    color: rgb(80, 0, 117);
 }
 
 @media only screen and (max-width:1366px) {
