@@ -1,0 +1,101 @@
+@font-face {
+    font-family: Dos1;
+    src: url(includes/Linebeam.ttf);
+}
+
+@font-face {
+    font-family: text3;
+    src: url(includes/Nexa-Heavy.ttf);
+}
+
+::-webkit-scrollbar {
+    width: 5px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8a8a8a; 
+    border-radius: 0px; 
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 255, 0)
+}
+
+form {
+    font-family: Dos1;
+    font-size: xx-large;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    height: 90vh;
+}
+
+
+label {
+    margin-bottom: -10px;
+}
+
+input[type="text"] {
+    font-family: text3;
+    font-style: italic;
+    font-size: large;
+    color: white;
+    background-color: rgb(121, 121, 121);
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 200px;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 0;
+    border: 2px solid rgb(255, 255, 255);
+    
+    
+}
+
+select {
+    font-family: text3;
+    font-style: italic;
+    font-size: large;
+    color: white;
+    background-color: rgb(67, 97, 126);
+    width: 200px;
+    align-self: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: 2px solid rgb(255, 255, 255);
+    text-align: center;
+}
+
+select option:checked {
+    background-color: #7c7c7c; 
+    color: #ffffff; 
+}
+
+button {
+    font-family: text3;
+    font-style: italic;
+    font-size: large;
+    color: white;
+    background-color: rgb(0, 99, 25);
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 200px;
+    text-align: center;
+    align-self: center;
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid rgb(0, 165, 27);
+}
+
+::placeholder {
+    font-family: text3;
+    font-style: italic;
+    font-size: large;
+    color: rgba(255, 255, 255, 0.384);
+}
