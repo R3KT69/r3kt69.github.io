@@ -90,13 +90,21 @@
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
+        createUnityInstance(document.querySelector("#unity-canvas"), config, (progress) => {
         }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-        }).catch((message) => {
-          alert(message);
+          // ✅ Save it globally
+          window.unityInstance = unityInstance;
+
+          // ✅ Define SendMessage globally
+          window.SendMessage = function(gameObject, method, param) {
+            unityInstance.SendMessage(gameObject, method, param);
+          };
+
+          console.log("✅ Unity is ready. SendMessage is available.");
+        }).catch((err) => {
+          console.error("Unity failed to load:", err);
         });
+
       };
       document.body.appendChild(script);
     </script>
