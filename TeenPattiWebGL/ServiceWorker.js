@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-teenpatti_shuvo-1.0";
 const contentToCache = [
     "Build/TeenPattiWebGL.loader.js",
-    "Build/TeenPattiWebGL.framework.js.br",
-    "Build/TeenPattiWebGL.data.br",
-    "Build/TeenPattiWebGL.wasm.br",
+    "Build/TeenPattiWebGL.framework.js",
+    "Build/TeenPattiWebGL.data",
+    "Build/TeenPattiWebGL.wasm",
     "TemplateData/style.css"
 
 ];
