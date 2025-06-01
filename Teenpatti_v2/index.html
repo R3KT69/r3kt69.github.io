@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Unity Web Player | teenpatti_shuvo</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <link rel="stylesheet" href="TemplateData/style.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <style>
+      #unity-progress-bar-full {
+        height: 100%;
+        background: linear-gradient(90deg, #2196f3, #64b5f6);
+        width: 0%;
+        transition: width 0.3s ease;
+      }
+
+      #unity-logo {
+        display: none;
+      }
+
+      #unity-warning {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 10;
+        color: white;
+        font-weight: bold;
+        padding: 10px 0;
+        pointer-events: none;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="unity-container">
+      <canvas id="unity-canvas" width="500" height="500" tabindex="-1"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+      <div id="unity-warning"></div>
+    </div>
+
+    <!-- ✅ ADD THIS FUNCTION: Unity --> JS --> Flutter -->
+    <script>
+      function sendToFlutter(message) {
+        // Method 1: For WebView with JavaScriptChannel
+        if (window.FromUnity && window.FromUnity.postMessage) {
+          window.FromUnity.postMessage(message);
+        }
+        // Method 2: For flutter_inappwebview plugin
+        else if (window.flutter_inappwebview) {
+          window.flutter_inappwebview.callHandler('FromUnity', message);
+        } else {
+          console.log("No Flutter bridge found. Message: " + message);
+        }
+      }
+    </script>
+
+    <script>
+      window.addEventListener("load", () => {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("ServiceWorker.js");
+        }
+      });
+
+      const container = document.querySelector("#unity-container");
+      const canvas = document.querySelector("#unity-canvas");
+      const loadingBar = document.querySelector("#unity-loading-bar");
+      const progressBarFull = document.querySelector("#unity-progress-bar-full");
+      const warningBanner = document.querySelector("#unity-warning");
+
+      function unityShowBanner(msg, type) {
+        function updateBannerVisibility() {
+          warningBanner.style.display = warningBanner.children.length ? "block" : "none";
+        }
+        const div = document.createElement("div");
+        div.innerHTML = msg;
+        warningBanner.appendChild(div);
+        if (type === "error") div.style = "background: red; padding: 10px;";
+        else {
+          if (type === "warning") div.style = "background: yellow; padding: 10px;";
+          setTimeout(() => {
+            warningBanner.removeChild(div);
+            updateBannerVisibility();
+          }, 5000);
+        }
+        updateBannerVisibility();
+      }
+
+      const buildUrl = "Build";
+      const loaderUrl = buildUrl + "/Teenpatti_v2.loader.js";
+      const config = {
+        arguments: [],
+        dataUrl: buildUrl + "/Teenpatti_v2.data",
+        frameworkUrl: buildUrl + "/Teenpatti_v2.framework.js",
+        codeUrl: buildUrl + "/Teenpatti_v2.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "teenpatti_shuvo",
+        productVersion: "1.0",
+        showBanner: unityShowBanner,
+      };
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        const meta = document.createElement("meta");
+        meta.name = "viewport";
+        meta.content = "width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes, viewport-fit=cover";
+        document.head.appendChild(meta);
+      }
+
+      loadingBar.style.display = "block";
+
+      const script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressBarFull.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+          // Optional: Expose SendMessage if needed
+          window.SendMessage = unityInstance.SendMessage;
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>
