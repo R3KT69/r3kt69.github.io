@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-Alibaba_Game-1.0";
 const contentToCache = [
-    "Build/New folder.loader.js",
-    "Build/New folder.framework.js.unityweb",
-    "Build/New folder.data.unityweb",
-    "Build/New folder.wasm.unityweb",
+    "Build/Alibaba_v2.loader.js",
+    "Build/Alibaba_v2.framework.js.unityweb",
+    "Build/Alibaba_v2.data.unityweb",
+    "Build/Alibaba_v2.wasm.unityweb",
     "TemplateData/style.css"
 
 ];
