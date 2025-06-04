@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>teenpatti_shuvo</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <link rel="stylesheet" href="TemplateData/style.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <style>
+      body {
+        margin: 0;
+        background: #121212;
+        font-family: sans-serif;
+        color: white;
+        overflow: hidden;
+      }
+      #unity-container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      #unity-canvas {
+        width: 100%;
+        height: 100%;
+        background: #000;
+      }
+      #custom-loading-screen {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #1e1e1e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 10;
+      }
+      #custom-loading-screen h1 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #00ffcc;
+      }
+      #custom-progress-bar {
+        width: 60%;
+        height: 8px;
+        background: #333;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      #custom-progress-fill {
+        height: 100%;
+        width: 0%;
+        background: #00ffcc;
+        transition: width 0.3s ease;
+      }
+      #unity-warning {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: yellow;
+        z-index: 20;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="unity-container">
+      <canvas id="unity-canvas" tabindex="-1"></canvas>
+      <div id="custom-loading-screen">
+        <h1>Loading teenpatti_shuvo...</h1>
+        <div id="custom-progress-bar">
+          <div id="custom-progress-fill"></div>
+        </div>
+      </div>
+      <div id="unity-warning"></div>
+    </div>
+
+    <script>
+      window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("ServiceWorker.js");
+        }
+      });
+
+      const canvas = document.querySelector("#unity-canvas");
+      const loadingScreen = document.querySelector("#custom-loading-screen");
+      const progressFill = document.querySelector("#custom-progress-fill");
+      const warningBanner = document.querySelector("#unity-warning");
+
+      function unityShowBanner(msg, type) {
+        const div = document.createElement("div");
+        div.innerHTML = msg;
+        if (type === "error") div.style = "background: red; padding: 10px;";
+        if (type === "warning") {
+          div.style = "background: yellow; padding: 10px;";
+          setTimeout(() => div.remove(), 5000);
+        }
+        warningBanner.appendChild(div);
+        warningBanner.style.display = "block";
+      }
+
+      const buildUrl = "Build";
+      const loaderUrl = buildUrl + "/teenpatti_ultimate.loader.js";
+      const config = {
+        dataUrl: buildUrl + "/teenpatti_ultimate.data.unityweb",
+        frameworkUrl: buildUrl + "/teenpatti_ultimate.framework.js.unityweb",
+        codeUrl: buildUrl + "/teenpatti_ultimate.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "teenpatti_shuvo",
+        productVersion: "1.0",
+        showBanner: unityShowBanner,
+      };
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        const meta = document.createElement("meta");
+        meta.name = "viewport";
+        meta.content = "width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes";
+        document.getElementsByTagName("head")[0].appendChild(meta);
+      }
+
+      const script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressFill.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+          loadingScreen.style.display = "none";
+          window.SendMessage = unityInstance.SendMessage;
+          window.sendToUnity = (msg) => {
+            SendMessage("FlutterBridge", "ReceiveMessage", msg);
+          };
+        }).catch((message) => alert(message));
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>
