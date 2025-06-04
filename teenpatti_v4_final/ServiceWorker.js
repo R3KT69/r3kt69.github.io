@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-teenpatti_shuvo-1.0";
 const contentToCache = [
-    "Build/teenpatti_v4_final.loader.js",
-    "Build/teenpatti_v4_final.framework.js.unityweb",
-    "Build/teenpatti_v4_final.data.unityweb",
-    "Build/teenpatti_v4_final.wasm.unityweb",
+    "Build/New folder.loader.js",
+    "Build/New folder.framework.js.unityweb",
+    "Build/New folder.data.unityweb",
+    "Build/New folder.wasm.unityweb",
     "TemplateData/style.css"
 
 ];
